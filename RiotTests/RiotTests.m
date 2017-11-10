@@ -17,6 +17,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "CircleButton.h"
 
 @interface RiotTests : XCTestCase
 
@@ -34,16 +35,19 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)buttonCanBeInitialized {
+    CircleButton *button = [CircleButton new];
+    
+    XCTAssertNotNil(button);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)buttonCanBeInitializedWithStuff {
+    UIImage *image = [UIImage imageWithData:[NSData new]];
+    CircleButton *button = [[CircleButton alloc] initWithImage:image borderColor:[UIColor greenColor]];
+    
+    XCTAssertNotNil(button);
 }
+
+
 
 @end
